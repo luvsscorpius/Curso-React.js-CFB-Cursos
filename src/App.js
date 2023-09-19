@@ -8,6 +8,7 @@ export default function App() {
       {/* Inserindo componentes */}
       <Header />
       <Body />
+
     </>
   )
 }
