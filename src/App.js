@@ -1,25 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
-import Relogio from './componentes/Relogio'
+import Numero from './componentes/Numero'
 
 export default function App() {
 
-  const textoDestaque = {
-    color: '#00f',
-    fontSize: '3em'
-  }
+  const [num, setNum] = useState(50)
 
   return (
     <>
-      <section className='caixa'>
-        <Relogio />
-        {/* CSS inline */}
-        <h1 style={{ color: '#f00', fontSize: '5em' }}>CFB Cursos</h1>
-        {/* CSS por constante */}
-        <h2 style={textoDestaque}>Curso de React</h2>
-        <p className='texto'>Se inscreva em nosso canal e nos siga no instagram</p>
-        <a href='https://www.youtube.com/cfbcursos' target='_blank' rel='noopener'>CFB Cursos</a>
-      </section>
+      <p>Valor do state num em App: {num}</p>
+      <Numero num={num} setNum={setNum} />
     </>
   )
 }
