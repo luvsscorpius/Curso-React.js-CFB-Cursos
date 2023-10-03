@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import './App.css'
-import Numero from './componentes/Numero'
+import Led from './componentes/Led'
 
 export default function App() {
 
-  const [num, setNum] = useState(50)
+  const [ligado, setLigado] = useState(false)
+
+  const cancelar = (obj) => {
+    return obj.preventDefault()
+  }
 
   return (
     <>
-      <p>Valor do state num em App: {num}</p>
-      <Numero num={num} setNum={setNum} />
+      <Led ligado={ligado} setLigado={setLigado} />
+      <a href='https://www.google.com.br' target='_blank' onClick={(e) => cancelar(e)}>
+        CFB Cursos
+      </a>
     </>
   )
 }
