@@ -1,37 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
 
 export default function App() {
 
-  const [cor, setCor] = useState(1)
-
-  const vermelho = { color: '#f00' }
-  const verde = { color: '#0f0' }
-  const azul = { color: '#00f' }
-
-  const retCor = (c) => {
-    if (c == 1) {
-      return vermelho
-    } else if (c == 2) {
-      return verde
-    } else {
-      return azul
-    }
-  }
-
-  const mudaCor = () => {
-    setCor(cor + 1)
-    if (cor > 2) {
-      setCor(1)
-    }
-  }
-
-  setInterval(mudaCor, 1000)
+  const userRoles = ['admin', 'user']
 
   return (
-    <>
-      <h1 style={retCor(cor)}>And</h1>
-      <button onClick={() => mudaCor()}>Muda cor</button>
-    </>
+    <div>
+      {userRoles.map((role, index) => (
+        < p key={index} >
+          {role === 'admin' ? 'Admin' : 'Usuário'}
+        </p>
+      ))
+      }
+    </div >
   )
 }
