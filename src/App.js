@@ -1,18 +1,15 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+import ListaDeItens from './componentes/ListaDeItens';
 
-export default function App() {
-
-  const userRoles = ['admin', 'user']
+function App() {
+  const dados = ['Item 1', 'Item 2', 'Item 3'];
 
   return (
     <div>
-      {userRoles.map((role, index) => (
-        < p key={index} >
-          {role === 'admin' ? 'Admin' : 'Usuário'}
-        </p>
-      ))
-      }
-    </div >
-  )
+      <h1>Meu Aplicativo</h1>
+      <ListaDeItens dados={dados} />
+    </div>
+  );
 }
+
+export default App;
