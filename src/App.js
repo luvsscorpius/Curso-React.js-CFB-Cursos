@@ -1,14 +1,23 @@
-import React from 'react';
-import ListaDeItens from './componentes/ListaDeItens';
+import React, { useState } from 'react';
 
 function App() {
-  const dados = ['Item 1', 'Item 2', 'Item 3'];
+  const [nome, setNome] = useState('')
+  const [carro, setCarro] = useState('HRV')
 
   return (
-    <div>
-      <h1>Meu Aplicativo</h1>
-      <ListaDeItens dados={dados} />
-    </div>
+    <>
+      <label>Digite seu nome</label>
+      <input type="text" name="fnome" onChange={(e) => setNome(e.target.value)} value={nome} />
+      <p>Nome digitado: {nome}</p>
+      <label>Selecione um carro</label>
+      <select values={carro} onChange={(e) => setCarro(e.target.value)}>
+        <option value='HRV'>HRV</option>
+        <option value='Golf'>Golf</option>
+        <option value='Fusca'>Fusca</option>
+        <option value='Argo'>Argo</option>
+      </select>
+      <p>Carro Selecionado: {carro}</p>
+    </>
   );
 }
 
