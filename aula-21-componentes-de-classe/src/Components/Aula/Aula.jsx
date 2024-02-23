@@ -1,11 +1,11 @@
 import React from 'react'
-import Classe from './Classe'
+import Carro from './Carro'
 
 const Aula = () => {
     return (
         <>
             <h1>Componentes de Classe</h1>
-            <Classe canal="CFB Cursos" curso="Curso de React"/>
+            <Carro canal="CFB Cursos" curso="Curso de React"/>
         </>
     )
 }
