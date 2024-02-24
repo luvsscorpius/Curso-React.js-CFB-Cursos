@@ -5,7 +5,7 @@ const Aula = () => {
     return (
         <>
             <h1>Componentes de Classe</h1>
-            <Carro canal="CFB Cursos" curso="Curso de React"/>
+            <Carro fator={1}/>
         </>
     )
 }

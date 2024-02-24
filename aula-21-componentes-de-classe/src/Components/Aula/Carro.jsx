@@ -16,7 +16,23 @@ class Carro extends React.Component{
     }
 
     ligarDesligar() {
-        this.setState({ligado: !this.state.ligado})
+        // this.setState({ligado: !this.state.ligado})
+
+        // Outra utilização do setState
+        this.setState(
+            (state) => (
+                {ligado : !state.ligado}
+            )
+        )
+    }
+
+    // Pegando o valor de props la de aula.jsx e atualizando o valor do state velAtual para cada vez que eu clicar no botão acelerar ele incremente o valor de velAtual.
+    acelerar() {
+        this.setState(
+            (state, props) => (
+                {velAtual: state.velAtual + props.fator}
+            )
+        )
     }
 
     render(){
@@ -27,6 +43,7 @@ class Carro extends React.Component{
                 <p>Ligado: {this.state.ligado ? 'Sim' : 'Não'}</p>
                 <p>Velocidade Atual: {this.state.velAtual}</p>
                 <button onClick={() => this.ligarDesligar()}>{this.state.ligado ? 'Desligar Carro' : 'Ligar Carro'}</button>
+                <button onClick={() => this.acelerar()}>Acelerar</button>
             </>
         )
     }
