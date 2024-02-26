@@ -37,6 +37,23 @@ class Carro extends React.Component{
         )
     }
 
+    // Ciclo de vida de um componente, 
+
+    //esse método significa que quando o componente for montado ele executará esse bloco de código
+    componentDidMount() {
+        console.log('O carro foi criado')
+    }
+
+    // Esse método é chamado todo vez que o componente for atualizado
+    componentDidUpdate() {
+        console.log('O carro foi atualizado')
+    }
+
+    // Esse método será chamado toda vez que o componente for removido do DOM
+    componentWillUnmount() {
+        console.log('Carro foi removido')
+    }
+
     render(){
         return (
             <>
